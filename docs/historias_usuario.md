@@ -1,242 +1,439 @@
-# **Proyecto Historias de usuario**
+# Historias de usuario
 
-### **Historia #001**
+## Historia #001
 
-**como:** usuario \
-**quiero:** iniciar sesion en el software \
-**para:** poder realizar mis funciones \
-**estimado:**
+**como:** empleado **quiero:** poder iniciar sesion **para:** acceder a los funcionalidades de la aplicacion
 
----
+**Estimacion:** N/A
 
-### **Historia #002**
+### Criterios de aceptacion
 
-**como:** mesero \
-**quiero:** realizar la toma de pedidos de las diferentes mesas \
-**para:** comunicar al area correspondiente de los productos requeridos \
-**estimado:**
+1. [ ] **Datos incorrectos**
 
----
+- **Dado que:** quiero autenticarme
+- **Cuando:** ingrese datos incorrectos
+- **Entonces:** fallara la autenticacion
 
-### **Historia #003**
+2. [ ] **Datos faltantes**
 
-**como:** mesero \
-**quiero:** navegar a traves de los pedidos del dia \
-**para:** llevar un control de los pedidos \
-**estimado:**
+- **Dado que:** quiero autenticarme
+- **Cuando:** no propocione los datos requeridos
+- **Entonces:** fallara la autenticacion
 
----
+***
 
-### **Historia #004**
+## Historia #002
 
-**como:** mesero \
-**quiero:** eliminar los pedidos que no se encuentren completados \
-**para:** llevar un control de los pedidos \
-**estimado:**
+**como:** mesero **quiero:** regitrar los pedidos de los clientes **para:** que la cocina obtenga la informacion para la preparacion de los platos
 
----
+### Criterios de aceptacion
 
-### **Historia #005**
+1. [ ] **Toma de pedido sin seleccion de mesa**
 
-**como:** mesero \
-**quiero:** ver los detalles de un pedido especifico \
-**para:** obtener la informacion del pedido \
-**estimado:**
+- **Dado que:** Quiero tomar el pedido de un cliente
+- **Cuando:** No seleccione una mesa
+- **Entonces:** No me sera posible crear el pedido
 
----
+2. [ ] **Toma de pedido con informacion valida**
 
-### **Historia #006**
+- **Dado que:** Quiero tomar el pedido de un cliente
+- **Cuando:** Seleccione una mesa disponible
+- **Entonces:** El pedido se creara satisfactoriamente
 
-**como:** mesero \
-**quiero:** poder cancelar un pedido \
-**para:** suplir la necesidad del cliente de cancelar su pedido \
-**estimado:**
+***
 
----
+## Historia #003
 
-### **Historia #007**
+- **Como:** Mesero
+- **Quiero:** poder cancelar los pedidos creados
+- **Para:** mantener la informacion de los pedidos acorde a lo que desean los clientes
 
-**como:** mesero \
-**quiero:** marcar como completado un pedido \
-**para:** dar a conocer el estado actual de un pedido \
-**estimado:**
+### Criterios de aceptacion
 
----
+1. [ ] **Cancelacion de un pedido completado** 
 
-### **Historia #008**
+- **Dado que:** decida eliminar un pedido
+- **Cuando:** el estado del pedido sea "completado"
+- **Entonces:** no se permite la eliminacion del pedido
 
-**como:** jefe de cocina \
-**quiero:** visualizar un listado con los pedidos sin completar \
-**para:** responder a los pedidos que se encuentren pendientes \
-**estimado:**
+2. [ ] **Cancelacion de un pedido entregado**
 
----
+- **Dado que:** decida eliminar un pedido
+- **Cuando:** el estado del pedido sea "entregado"
+- **Entonces:** no se permite la eliminacion del pedido
 
-### **Historia #009**
+3. [ ] **Cancelacion de un pedido estado valido**
 
-**como:** jefe de cocina \
-**quiero:** marcar un pedido como preparado \
-**para:** dar constancia del estado actual del pedido \
-**estimado:**
+- **Dado que:** decida eliminar un pedido
+- **Cuando:** el pedido no se encuentre completado
+- **Entonces:** el pedido es eliminado exitosamente
 
----
+***
 
-### **Historia #010**
+## Historia #004
 
-**como:** jefe de cocina \
-**quiero:** ver los detalles de un pedido \
-**para:** conocer los elementos y estado de un pedido \
-**estimado:**
+**como** mesero **quiero** poder actualizar el estado de un pedido a "entregado" o "completado" **para** que se refleje el estado actual del pedido
 
----
+**Estimacion:** ¿?
 
-### **Historia #011**
+### Criterios de aceptacion
 
-**como:** bartender \
-**quiero:** ver un listado con los pedidos sin completar \
-**para:** poder preparar los pedidos \
-**estimado:**
+1. [ ] **Actualizar el estado de un pedido completado**
+2. [ ] **Actualizar el estado de un pedido con estado valido**
 
----
 
-### **Historia #012**
+***
 
-**como:** bartender \
-**quiero:** marcar como preparado un pedido \
-**para:** dar a conocer el estado actual del pedido \
-**estimado:**
+## Historia #005
 
----
+**como** mesero **quiero** visualizar la informacion basica de los pedidos creados junto a sus respectivos estados **para** poder obtener rapidamente informacion sobre los pedidos
 
-### **Historia #013**
+**Estimacion:** ¿?
 
-**como:** administrador \
-**quiero:** modificar el menu del dia \
-**para:** asignar los productos en venta \
-**estimado:**
+***
 
----
+## Historia #006
 
-### **Historia #014**
+**como** bartender **quiero** visualizar una lista con los pedidos del area de bar **para** facilitar la navegacion y busqueda entre los distintos pedidos
 
-**como:** administrador \
-**quiero:** crear un producto \
-**para:** poder asignarlo al menu \
-**estimado:**
+**Estimacion:** ¿?
 
----
+***
 
-### **Historia #015**
+## Historia #007
 
-**como:** administrador \
-**quiero:** eliminar un producto \
-**para:** limpiar un producto que ya no es necesario \
-**estimado:**
+**como** bartender **quiero** poder acceder a la informacion detallada de un pedido **para** preparar correctamente el pedido del cliente
 
----
+**Estimacion:** ¿?
 
-### **Historia #016**
+***
 
-**como:** administrador \
-**quiero:** actualizar un producto \
-**para:** mantener al dia la informacion \
-**estimado:**
+## Historia #008
 
----
+**como** bartender **quiero** marcar un pedido como preparado **para** dar a conocer a las partes interesadas sobre el estado actual del pedido
 
-### **Historia #017**
+**Estimacion:** ¿?
 
-**como:** administador \
-**quiero:** ver un listado de los productos \
-**para:** conocer los productos disponibles \
-**estimado:**
+### Criterios de aceptacion
 
----
+1. [ ] **Estado de completado a preparado**
 
-### **Historia #018**
+- **Dado que:** quiera cambiar el estado de un pedido
+- **Cuando:** el estado del pedido sea "completado"
+- **Entonces:** no se efectua el cambio
 
-**como:** administrador \
-**quiero:** crear categorias \
-**para:** llevar mi organizacion de los productos \
-**estimado:**
+2. [ ] **Estado de pendiente a preparado**
 
----
+- **Dado que:** quiera cambiar el estado de un pedido
+- **Cuando:** el estado del pedido sea "pendiente"
+- **Entonces:** el estado es actualizado correctamente
 
-### **Historia #019**
+***
 
-**como:** administrador \
-**quiero:** eliminar categoria \
-**para:** remover una informacion que no es necesaria \
-**estimado:**
+## Historia #009
 
----
+**como** jefe de cocina **quiero** visualizar un listado con los pedidos del area de cocina **para** facilitar la navegacion y busqueda entre los diferentes pedidos
 
-### **Historia #020**
+**Estimacion:** ¿?
 
-**como:** administrador \
-**quiero:** actualizar una categoria \
-**para:** actualizar el estado actual \
-**estimado:**
+***
 
----
+## Historia #010
 
-### **Historia #021**
+**como** jefe de cocina **quiero** poder acceder a la informacion detallada de un pedido **para** preparar correctamente el pedido del cliente
 
-**como:** administrador \
-**quiero:** asignar categorias a un producto \
-**para:** enriquecer la informacion de un producto \
-**estimado:**
+**Estimacion:** ¿?
 
----
+***
 
-### **Historia #022**
+## Historia #011
 
-**como:** administrador \
-**quiero:** quitar una cateogria de un producto \
-**para:** llevar un gestion de la informacion de un producto \
-**estimado:**
+**como** jefe de cocina **quiero** marcar un pedido como preparado **para** dar a conocer a las partes interesadas sobre el estado actual del pedido
 
----
+**Estimacion:** ¿?
 
-### **Historia #023**
+### Criterios de aceptacion
 
-**como:** administrador \
-**quiero:** asignar un producto a un area (cocina/bar) \
-**para:** asignar el area encargada de la preparacion \
-**estimado:**
+1. [ ] **Estado de completado a preparado**
 
----
+- **Dado que:** quiera cambiar el estado de un pedido
+- **Cuando:** el estado del pedido sea "completado"
+- **Entonces:** no se efectua el cambio
 
-### **Historia #024**
+2. [ ] **Estado de pendiente a preparado**
 
-**como:** administrador \
-**quiero:** gestionar los roles de un empleado \
-**para:** llevar un control de las responsabilidades de un empleado \
-**estimado:**
+- **Dado que:** quiera cambiar el estado de un pedido
+- **Cuando:** el estado del pedido sea "pendiente"
+- **Entonces:** el estado es actualizado correctamente
 
----
+***
 
-### **Historia #025**
+## Historia #012
 
-**como:** administrador \
-**quiero:** cambiar el estado de un empleado (activo, inactivo) \
-**para:** controlar el acceso de los empleados \
-**estimado:**
+**como** administrador **quiero** poder crear productos **para** enriquecer el catalogo y las posibles opciones para el menu del dia
 
----
+**Estimacion:** ¿?
 
-### **Historia #026**
+### Criterios de aceptacion
 
-**como:** administrador \
-**quiero:** ver un listado con los pedidos completados \
-**para:** llevar un seguimiento y control de las ventas \
-**estimado:**
+1. [ ] **Crear un producto sin los datos necesarios**
 
-<!--
-### **Historia #000**
+- **Dado que:** quiera crear un producto
+- **Cuando:** no proporcione la informacion pertinente
+- **Entonces:** no se podra crear el producto
 
-**como:** \
-**quiero:** \
-**para:** \
-**estimado:**
--->
+2. [ ] **Crear un producto con datos incorrectos**
+
+- **Dado que:** quiera crear un producto
+- **Cuando:** no proporcione la informacion en el formato requerido
+- **Entonces:** no se podra crear el producto
+
+3. [ ] **Crear un producto con nombre en uso**
+
+- **Dado que:** quiera crear un producto
+- **Cuando:** propocione un nombre que ya se encuentre en uso por otro producto
+- **Entonces:** no se podra crear el producto
+
+***
+
+## Historia #013
+
+**como** administrador **quiero** poder eliminar un producto **para** mantener un catalogo limpio
+
+**Estimacion:** ¿?
+
+***
+
+## Historia #014
+
+**como** adminsitrador **quiero** poder cambiar la informacion de un producto **para** mantenerla actualizada
+
+**Estimacion:** ¿?
+
+### Criterios de aceptacion
+
+1. [ ] **Crear un producto con datos incorrectos**
+
+- **Dado que:** quiera cambiar la informacion de un producto
+- **Cuando:** no proporcione la informacion en el formato requerido
+- **Entonces:** no se podra actualizar la informacion del producto
+
+2. [ ] **Crear un producto con nombre en uso**
+
+- **Dado que:** quiera cambiar la informacion de un producto
+- **Cuando:** propocione un nombre que ya se encuentre en uso por otro producto
+- **Entonces:** no se podra actualizar la informacion del producto
+
+***
+
+## Historia #015
+
+**como** administrador **quiero** poder visualizar el listado de los producto **para** mantenerme informado de los productos del restaurante
+
+**Estimacion:** ¿?
+
+### Criterios de aceptacion
+
+1. [ ] **Filtrado por nombre**
+
+- **Dado que:** quiera visualizar un listado de productos y opte por filtrar
+- **Cuando:** ingrese como dato el nombre para un producto
+- **Entonces:** solo se visualizaran los productos que coincidan con el nombre del producto
+
+2. [ ] **Filtrado por categoria**
+
+- **Dado que:** quiera visualizar un listado de productos y opte por filtrar
+- **Cuando:** ingrese como dato la(s) categoria(s) para los productos
+- **Entonces:** solo se visualizaran los productos que pertenescan a la categoria
+
+***
+
+## Historia #016
+
+**como** administrador **quiero** poder obtener la informacion detallada de un producto **para** consultar la actual informacion de un producto
+
+**Estimacion:** ¿?
+
+***
+
+## Historia #017
+
+**como** administrador **quiero** poder crear un menu del dia **para** designar los productos que estaran en venta 
+
+**Estimacion:** ¿?
+
+### Criterios de aceptacion
+
+1. [ ] **Agregar un producto ya presente**
+
+- **Dado que:** quiera crear un nuevo menu del dia
+- **Cuando:** incluya dos (2) veces un mismo producto en el mismo
+- **Entonces:** solo se tomara una (1) vez el producto y el menu sera creado satifcatoriamente
+
+***
+
+## Historia #018
+
+**como** administrador **quiero** poder modificar un menu del dia **para** mantener al dia las opciones en el menu
+
+**Estimacion:** ¿?
+
+### Criterios de aceptacion
+
+1. [ ] **Agregar un producto ya presente**
+
+- **Dado que:** quiera actualizar el menu del dia
+- **Cuando:** incluya un producto que ya se encuentre presente
+- **Entonces:** solo se tomara una (1) vez el producto y el menu sera creado satifcatoriamente
+
+***
+
+## Historia #019
+
+**como** administrador **quiero** poder crear una categoria **para** @TODO
+
+**Estimacion:** ¿?
+
+### Criterios de aceptacion
+
+1. [ ] **Datos faltantes**
+
+- **Dado que:** quiera crear una categoria
+- **Cuando:** no incluya todos los datos requeridos
+- **Entonces:** no se creara la categoria
+
+2. [ ] **Datos incorrectos**
+
+- **Dado que:** quiera crear una categoria
+- **Cuando:** los datos no cumplan con el formato necesario
+- **Entonces:** no se creara la categoria
+
+3. [ ] **Nombre en uso**
+
+- **Dado que:** quiera crear una categoria
+- **Cuando:** el nombre de la categoria ya se encuentre en uso
+- **Entonces:** no se permitira la creacion de la categoria
+
+***
+
+## Historia #020
+
+**como** administrador **quiero** poder eliminar una categoria **para** @TODO
+
+**Estimacion:** ¿?
+
+***
+
+## Historia #021
+
+**como** administrador **quiero** poder visualizar un listado con las categorias disponibles **para** @TODO
+
+**Estimacion:** ¿?
+
+***
+
+## Historia #022
+
+**como** administrador **quiero** poder asignar una categoria a un producto **para** enriquecer la informacion del producto
+
+**Estimacion:** ¿?
+
+***
+
+## Historia #023
+
+**como** administrador **quiero** remover una categoria de un producto **para** mantener actualizada la informacion de un producto
+
+**Estimacion:** ¿?
+
+***
+
+## Historia #024
+
+**como** administrador **quiero** poder crear un nuevo empleado **para** @TODO
+
+**Estimacion:** ¿?
+
+### Criterios de aceptacion
+
+1. [ ] ****
+
+***
+
+## Historia #025
+
+**como** administrador **quiero** poder modificar la informacion de un empleado **para** mantener actualizados los datos del empleado
+
+**Estimacion:** ¿?
+
+### Criterios de aceptacion
+
+1. [ ] ****
+
+***
+
+## Historia #026
+
+**como** administrador **quiero** poder eliminar un empleado **para** @TODO
+
+**Estimacion:** ¿?
+
+***
+
+## Historia #027
+
+**como** administrador **quiero** poder obtener la informacion detallada de un empleado **para** conocer los datos actuales del empleado
+
+**Estimacion:** ¿?
+
+***
+
+## Historia #028
+
+**como** administrador **quiero** poder asignar roles a un empleado **para** designar las responsabilidades y funciones del empleado
+
+**Estimacion:** ¿?
+
+### Criterios de aceptacion
+
+1. [ ] **Rol ya presente**
+
+- **Dado que:** quiera agregar roles a un empleado
+- **Cuando:** agrege roles con los que ya cuenta el empleado
+- **Entonces:** no se contaran los roles "duplicados" y se asignaran correctamente los demas roles
+
+***
+
+## Historia #029
+
+**como** administrador **quiero** poder remover roles de un empleado **para** designar las responsabilidades y funciones del empleado
+
+**Estimacion:** ¿?
+
+***
+
+## Historia #030
+
+**como** administrador **quiero** poder iniciar sesion **para** tener acceso a las funcionalidades que me corresponden en el software
+
+**Estimacion:** ¿?
+
+### Criterios de aceptacion
+
+1. [ ] **Datos incorrectos**
+
+- **Dado que:** quiero autenticarme
+- **Cuando:** no propocione los datos con el formato requerido
+- **Entonces:** fallara la autenticacion
+
+2. [ ] **Datos faltantes**
+
+- **Dado que:** quiero autenticarme
+- **Cuando:** no propocione los datos requeridos
+- **Entonces:** fallara la autenticacion
+
+3. [ ] **Credenciales incorrectas**
+
+- **Dado que:** quiero autenticarme
+- **Cuando:** no propocione las credenciales correctas para el inicio de sesion
+- **Entonces:** fallara la autenticacion
