@@ -1,12 +1,12 @@
-# **Requerimientos**
+# Requerimientos
 
-### **descripcion proyecto**
+### Descripcion proyecto*
 
-El proyecto consta de un software con el proposito de facilitar y agilizar la toma de pedidos en un restaurante
+Comandera es sistema de tomas de pedidos electronico para restaurantes, el cual busca agilizar los tiempos de entrega de los pedidos aumentando la productividad de los colaboradores. El sistema hace una división de responsabilidades por medio de areas especificas(bar, cocina, servicio), de esta forma el administrador puede asignar areas encargadas a sus miembros de equipo y clasificar los productos segun el area donde se produce.
 
-### **Requerimientos**
+### Requerimientos
 
-- el mesero puede realizar la toma de un pedido para la cocina con los platos del dia
+- El mesero puede realizar la toma de un pedido para la cocina con los platos del dia
 - el mesero puede realizar la toma de un pedido para el "bar"
 - el mesero puede navegar por los pedidos del dia
 - el mesero puede cancelar un pedido que no se encuentre completado
