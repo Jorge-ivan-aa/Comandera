@@ -1,6 +1,16 @@
-package co.edu.uniquindio.comandera.Entities;
+package co.edu.uniquindio.comandera.Entity;
 
-public class TeamMember extends Admin {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class TeamMember extends User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Area designedArea;
     private String phone;
 

@@ -1,10 +1,19 @@
-package co.edu.uniquindio.comandera.Entities;
+package co.edu.uniquindio.comandera.Entity;
 
-public class Admin {
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
     private String password;
 
-    public Admin(String name, String password) {
+    public User(String name, String password) {
         this.name = name;
         this.password = password;
     }
@@ -23,6 +32,10 @@ public class Admin {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     

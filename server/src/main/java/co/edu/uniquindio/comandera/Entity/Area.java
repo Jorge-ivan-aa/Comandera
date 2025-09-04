@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.Entities;
+package co.edu.uniquindio.comandera.Entity;
 
 public enum Area {
     KITCHEN, BAR, SERVICE, ADMINISTRATION
