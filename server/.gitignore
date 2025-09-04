@@ -1,7 +1,2 @@
 .env
-target/
 mysql-data/
-target/
-.idea/
-mvnw
-mvnw.cmd
