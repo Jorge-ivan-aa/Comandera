@@ -9,7 +9,6 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Dishes {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,6 +17,9 @@ public class Dishes {
     private String preparationArea;
     private Category[] categories;
     private Integer stimedTime;
+    
+    public Dishes() {
+    }
 
     public Dishes(String name, String preparationArea, Category[] categories, Integer stimedTime) {
         this.name = name;
@@ -57,7 +59,4 @@ public class Dishes {
     public void setStimedTime(Integer stimedTime) {
         this.stimedTime = stimedTime;
     }
-
-    
-
 }

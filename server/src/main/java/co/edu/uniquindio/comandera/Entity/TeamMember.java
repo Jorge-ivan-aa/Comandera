@@ -13,6 +13,9 @@ public class TeamMember extends User {
     private Long id;
     private Area designedArea;
     private String phone;
+    
+    public TeamMember() {
+    }
 
     public TeamMember(String name, String password, Area designedArea, String phone) {
         super(name, password);

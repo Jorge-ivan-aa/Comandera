@@ -7,11 +7,12 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Admin extends User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    public Admin() {
+    }
 
     public Admin(String name, String password) {
         super(name, password);
@@ -20,6 +21,4 @@ public class Admin extends User {
     public Long getId() {
         return id;
     }
-
-    
 }
