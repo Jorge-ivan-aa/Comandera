@@ -1,6 +1,6 @@
 .idea/
 .vscode/
-mysql-data/
+.data/
 target/
 
 .env
