@@ -1,7 +1,6 @@
-package co.edu.uniquindio.comandera.Entity;
+package co.edu.uniquindio.comandera.infraestructure.persistence.entity;
 
-import java.util.Locale.Category;
-
+import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,13 +14,13 @@ public class Dishes {
     
     private String name;
     private String preparationArea;
-    private Category[] categories;
+    private List<Categories> categories;
     private Integer stimedTime;
     
     public Dishes() {
     }
 
-    public Dishes(String name, String preparationArea, Category[] categories, Integer stimedTime) {
+    public Dishes(String name, String preparationArea, List<Categories> categories, Integer stimedTime) {
         this.name = name;
         this.preparationArea = preparationArea;
         this.categories = categories;
@@ -44,11 +43,11 @@ public class Dishes {
         this.preparationArea = preparationArea;
     }
 
-    public Category[] getCategories() {
+    public List<Categories> getCategories() {
         return categories;
     }
 
-    public void setCategories(Category[] categories) {
+    public void setCategories(List<Categories> categories) {
         this.categories = categories;
     }
 

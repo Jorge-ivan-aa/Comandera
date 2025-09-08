@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.Entity;
+package co.edu.uniquindio.comandera.infraestructure.persistence.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,28 +6,31 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class TeamMember extends User {
+public class Workers{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Area designedArea;
+    private String name;
+    private String password;
+    private String designedArea;
     private String phone;
     
-    public TeamMember() {
+    public Workers() {
     }
 
-    public TeamMember(String name, String password, Area designedArea, String phone) {
-        super(name, password);
+    public Workers(String name, String password, String designedArea, String phone) {
+        this.name = name;
+        this.password = password;
         this.designedArea = designedArea;
         this.phone = phone;
     }
 
-    public Area getDesignedArea() {
+    public String getDesignedArea() {
         return designedArea;
     }
 
-    public void setDesignedArea(Area designedArea) {
+    public void setDesignedArea(String designedArea) {
         this.designedArea = designedArea;
     }
 

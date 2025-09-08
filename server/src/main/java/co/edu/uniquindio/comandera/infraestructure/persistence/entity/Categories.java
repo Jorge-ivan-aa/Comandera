@@ -6,19 +6,25 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Admin extends co.edu.uniquindio.comandera.Entity.User {
+public class Categories {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String name;
     
-    public Admin() {
+    public Categories() {
+    }
+    
+    public Categories(String name) {
+        this.name = name;
     }
 
-    public Admin(String name, String password) {
-        super(name, password);
+    public String getName() {
+        return name;
     }
 
-    public Long getId() {
-        return id;
+    public void setName(String name) {
+        this.name = name;
     }
 }
