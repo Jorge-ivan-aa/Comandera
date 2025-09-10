@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infraestructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.entity;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -37,7 +37,7 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "table_id")
     @OnDelete(action = OnDeleteAction.SET_NULL)
-    private co.edu.uniquindio.comandera.infraestructure.entity.Table table;
+    private co.edu.uniquindio.comandera.infrastructure.entity.Table table;
     
     @OneToMany(mappedBy = "order", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Set<OrderProduct> products;
@@ -48,7 +48,7 @@ public class Order {
 
     public Order(
         Worker worker,
-        co.edu.uniquindio.comandera.infraestructure.entity.Table table,
+        co.edu.uniquindio.comandera.infrastructure.entity.Table table,
         Float total,
         LocalDateTime creation
     ) {
@@ -83,11 +83,11 @@ public class Order {
         this.worker = worker;
     }
 
-    public co.edu.uniquindio.comandera.infraestructure.entity.Table getTable() {
+    public co.edu.uniquindio.comandera.infrastructure.entity.Table getTable() {
         return table;
     }
 
-    public void setTable(co.edu.uniquindio.comandera.infraestructure.entity.Table table) {
+    public void setTable(co.edu.uniquindio.comandera.infrastructure.entity.Table table) {
         this.table = table;
     }
 

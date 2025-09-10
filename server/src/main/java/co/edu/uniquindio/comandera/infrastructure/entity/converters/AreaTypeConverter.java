@@ -1,6 +1,6 @@
-package co.edu.uniquindio.comandera.infraestructure.entity.converters;
+package co.edu.uniquindio.comandera.infrastructure.entity.converters;
 
-import co.edu.uniquindio.comandera.infraestructure.entity.enums.AreaType;
+import co.edu.uniquindio.comandera.infrastructure.entity.enums.AreaType;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 

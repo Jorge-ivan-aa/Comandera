@@ -1,11 +1,11 @@
-package co.edu.uniquindio.comandera.infraestructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.entity;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import co.edu.uniquindio.comandera.infraestructure.entity.enums.ProductStatus;
+import co.edu.uniquindio.comandera.infrastructure.entity.enums.ProductStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

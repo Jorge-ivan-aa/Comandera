@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infraestructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

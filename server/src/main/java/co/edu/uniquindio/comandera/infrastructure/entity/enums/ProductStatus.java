@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infraestructure.entity.enums;
+package co.edu.uniquindio.comandera.infrastructure.entity.enums;
 
 public enum ProductStatus {
     IN_PREPARATION,
