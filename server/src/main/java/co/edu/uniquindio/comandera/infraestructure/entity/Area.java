@@ -1,9 +1,9 @@
-package co.edu.uniquindio.comandera.Entity;
+package co.edu.uniquindio.comandera.infraestructure.entity;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import co.edu.uniquindio.comandera.Entity.enums.AreaType;
+import co.edu.uniquindio.comandera.infraestructure.entity.enums.AreaType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

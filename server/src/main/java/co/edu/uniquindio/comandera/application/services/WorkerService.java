@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.services;
+package co.edu.uniquindio.comandera.application.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

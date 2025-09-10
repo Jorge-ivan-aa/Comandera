@@ -1,6 +1,6 @@
-package co.edu.uniquindio.comandera.Entity.converters;
+package co.edu.uniquindio.comandera.infraestructure.entity.converters;
 
-import co.edu.uniquindio.comandera.Entity.enums.ProductStatus;
+import co.edu.uniquindio.comandera.infraestructure.entity.enums.ProductStatus;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
