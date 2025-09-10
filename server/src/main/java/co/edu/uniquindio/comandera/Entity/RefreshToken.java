@@ -2,6 +2,9 @@ package co.edu.uniquindio.comandera.Entity;
 
 import java.util.Objects;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +17,7 @@ import jakarta.persistence.UniqueConstraint;
 @Entity
 @Table(
     name = "refresh_tokens",
-    uniqueConstraints = @UniqueConstraint(columnNames = { "worker_id", "token" })
+    uniqueConstraints = @UniqueConstraint(columnNames = { "user_id", "token" })
 )
 public class RefreshToken {
     @Id
@@ -22,16 +25,17 @@ public class RefreshToken {
     private Long id;
     
     @ManyToOne
-    @JoinColumn(name = "worker_id")
-    private Worker worker;
+    @JoinColumn(name = "user_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private User user;
 
     private String token;
     
     public RefreshToken() {
     }
 
-    public RefreshToken(Worker worker, String token) {
-        this.worker = Objects.requireNonNull(worker);
+    public RefreshToken(User user, String token) {
+        this.user = Objects.requireNonNull(user);
         this.token = Objects.requireNonNull(token);
     }
 
@@ -43,12 +47,12 @@ public class RefreshToken {
         this.id = id;
     }
 
-    public Worker getWorker() {
-        return worker;
+    public User getUser() {
+        return user;
     }
 
-    public void setWorker(Worker worker) {
-        this.worker = worker;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getToken() {

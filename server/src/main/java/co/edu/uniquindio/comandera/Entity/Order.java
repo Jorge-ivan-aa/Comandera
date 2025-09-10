@@ -1,9 +1,15 @@
 package co.edu.uniquindio.comandera.Entity;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,15 +27,19 @@ public class Order {
     
     private Float total;
     
-    @ManyToOne
+    private LocalDateTime creation;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "worker_id")
+    @OnDelete(action = OnDeleteAction.SET_NULL)
     private Worker worker;
     
     @ManyToOne
     @JoinColumn(name = "table_id")
+    @OnDelete(action = OnDeleteAction.SET_NULL)
     private co.edu.uniquindio.comandera.Entity.Table table;
     
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Set<OrderProduct> products;
     
     public Order() {
@@ -39,12 +49,14 @@ public class Order {
     public Order(
         Worker worker,
         co.edu.uniquindio.comandera.Entity.Table table,
-        Float total
+        Float total,
+        LocalDateTime creation
     ) {
         this();
         this.total = total;
         this.worker = worker;
         this.table = table;
+        this.creation = creation;
     }
 
     public Long getId() {
@@ -77,6 +89,14 @@ public class Order {
 
     public void setTable(co.edu.uniquindio.comandera.Entity.Table table) {
         this.table = table;
+    }
+
+    public LocalDateTime getCreation() {
+        return creation;
+    }
+
+    public void setCreation(LocalDateTime creation) {
+        this.creation = creation;
     }
 
     public Set<OrderProduct> getProducts() {

@@ -4,16 +4,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "workers")
+@PrimaryKeyJoinColumn(name = "id")
 public class Worker extends User {
-    @Id
     private String identification;
 
     private String phone;
@@ -34,8 +35,12 @@ public class Worker extends User {
     )
     private Set<Area> areas;
     
+    @OneToMany(mappedBy = "worker")
+    private Set<Order> orders;
+    
     public Worker() {
         this.areas = new HashSet<>();
+        this.orders = new HashSet<>();
     }
 
     public Worker(
@@ -112,5 +117,13 @@ public class Worker extends User {
 
     public void setAreas(Set<Area> areas) {
         this.areas = areas;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
     }
 }

@@ -26,7 +26,18 @@ public class Category {
         this.products = new HashSet<>();
     }
 
+    public Category(String name) {
+        this();
+        this.name = name;
+    }
 
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
 
     public Long getId() {
         return id;
