@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import co.edu.uniquindio.comandera.infrastructure.entity.enums.ProductStatus;
+import co.edu.uniquindio.comandera.domain.model.enums.ProductStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -3,7 +3,7 @@ package co.edu.uniquindio.comandera.infrastructure.entity;
 import java.util.HashSet;
 import java.util.Set;
 
-import co.edu.uniquindio.comandera.infrastructure.entity.enums.AreaType;
+import co.edu.uniquindio.comandera.domain.model.enums.AreaType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
