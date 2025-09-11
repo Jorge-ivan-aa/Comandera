@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "categories")
-public class Category {
+public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,22 +20,22 @@ public class Category {
     private String name;
     
     @ManyToMany(mappedBy = "categories")
-    private Set<Product> products;
+    private Set<ProductEntity> products;
     
-    public Category() {
+    public CategoryEntity() {
         this.products = new HashSet<>();
     }
 
-    public Category(String name) {
+    public CategoryEntity(String name) {
         this();
         this.name = name;
     }
 
-    public Set<Product> getProducts() {
+    public Set<ProductEntity> getProducts() {
         return products;
     }
 
-    public void setProducts(Set<Product> products) {
+    public void setProducts(Set<ProductEntity> products) {
         this.products = products;
     }
 

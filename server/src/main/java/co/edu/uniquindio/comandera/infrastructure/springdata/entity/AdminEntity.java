@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,15 +10,15 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "administrators")
 @PrimaryKeyJoinColumn(name = "id")
-public class Admin extends User {
+public class AdminEntity extends UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    public Admin() {
+    public AdminEntity() {
     }
 
-    public Admin(String name, String password) {
+    public AdminEntity(String name, String password) {
         super(name, password);
     }
 

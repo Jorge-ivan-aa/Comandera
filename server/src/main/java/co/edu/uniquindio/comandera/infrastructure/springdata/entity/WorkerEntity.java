@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "workers")
 @PrimaryKeyJoinColumn(name = "id")
-public class Worker extends User {
+public class WorkerEntity extends UserEntity {
     private String identification;
 
     private String phone;
@@ -33,17 +33,17 @@ public class Worker extends User {
         joinColumns = @JoinColumn(name = "worker_id"),
         inverseJoinColumns = @JoinColumn(name = "area_id")
     )
-    private Set<Area> areas;
+    private Set<AreaEntity> areas;
     
     @OneToMany(mappedBy = "worker")
-    private Set<Order> orders;
+    private Set<OrderEntity> orders;
     
-    public Worker() {
+    public WorkerEntity() {
         this.areas = new HashSet<>();
         this.orders = new HashSet<>();
     }
 
-    public Worker(
+    public WorkerEntity(
         String identification,
         String name,
         String password,
@@ -111,19 +111,19 @@ public class Worker extends User {
         this.enable = enable;
     }
 
-    public Set<Area> getAreas() {
+    public Set<AreaEntity> getAreas() {
         return areas;
     }
 
-    public void setAreas(Set<Area> areas) {
+    public void setAreas(Set<AreaEntity> areas) {
         this.areas = areas;
     }
 
-    public Set<Order> getOrders() {
+    public Set<OrderEntity> getOrders() {
         return orders;
     }
 
-    public void setOrders(Set<Order> orders) {
+    public void setOrders(Set<OrderEntity> orders) {
         this.orders = orders;
     }
 }

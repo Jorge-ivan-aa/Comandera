@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity.converters;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity.converters;
 
 import co.edu.uniquindio.comandera.domain.model.enums.ProductStatus;
 import jakarta.persistence.AttributeConverter;

@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -22,18 +22,18 @@ public class DayMenuProduct {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "daymenu_id")
-    private DayMenu dayMenu;
+    private DayMenuEntity dayMenu;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product product;
+    private ProductEntity product;
 
     private Integer quantity;
     
     public DayMenuProduct() {
     }
 
-    public DayMenuProduct(DayMenu dayMenu, Product product, Integer quantity) {
+    public DayMenuProduct(DayMenuEntity dayMenu, ProductEntity product, Integer quantity) {
         this.dayMenu = dayMenu;
         this.product = product;
         this.quantity = quantity;
@@ -47,11 +47,11 @@ public class DayMenuProduct {
         this.id = id;
     }
 
-    public DayMenu getDayMenu() {
+    public DayMenuEntity getDayMenu() {
         return dayMenu;
     }
 
-    public void setDayMenu(DayMenu dayMenu) {
+    public void setDayMenu(DayMenuEntity dayMenu) {
         this.dayMenu = dayMenu;
     }
 
@@ -63,11 +63,11 @@ public class DayMenuProduct {
         this.quantity = quantity;
     }
 
-    public Product getProduct() {
+    public ProductEntity getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
+    public void setProduct(ProductEntity product) {
         this.product = product;
     }
 }

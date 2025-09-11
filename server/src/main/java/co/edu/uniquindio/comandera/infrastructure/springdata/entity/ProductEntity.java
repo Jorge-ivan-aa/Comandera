@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -24,7 +24,7 @@ import jakarta.persistence.UniqueConstraint;
     name = "products",
     uniqueConstraints = @UniqueConstraint(columnNames = { "name" })
 )
-public class Product {
+public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -41,7 +41,7 @@ public class Product {
     
     @ManyToOne
     @JoinColumn(name = "preparation_area")
-    private Area preparationArea;
+    private AreaEntity preparationArea;
 
     private ProductStatus status;
     
@@ -57,26 +57,26 @@ public class Product {
         joinColumns = @JoinColumn(name = "product_id"),
         inverseJoinColumns = @JoinColumn(name = "category_id")
     )
-    private Set<Category> categories;
+    private Set<CategoryEntity> categories;
     
     @OneToMany(mappedBy = "product")
     private Set<DayMenuProduct> menus;
     
     @OneToMany(mappedBy = "product")
-    private Set<OrderProduct> orders;
+    private Set<OrderProductEntity> orders;
 
-    public Product() {
+    public ProductEntity() {
         this.menus = new HashSet<>();
         this.orders = new HashSet<>();
         this.categories = new HashSet<>();
     }
 
-    public Product(
+    public ProductEntity(
         String name,
         Float price,
         String description,
         Integer estimateTime,
-        Area preparationArea,
+        AreaEntity preparationArea,
         ProductStatus status,
         LocalDateTime prepararationDate,
         String image
@@ -132,11 +132,11 @@ public class Product {
         this.estimateTime = estimateTime;
     }
 
-    public Area getPreparationArea() {
+    public AreaEntity getPreparationArea() {
         return preparationArea;
     }
 
-    public void setPreparationArea(Area preparationArea) {
+    public void setPreparationArea(AreaEntity preparationArea) {
         this.preparationArea = preparationArea;
     }
 
@@ -164,11 +164,11 @@ public class Product {
         this.image = image;
     }
 
-    public Set<Category> getCategories() {
+    public Set<CategoryEntity> getCategories() {
         return categories;
     }
 
-    public void setCategories(Set<Category> categories) {
+    public void setCategories(Set<CategoryEntity> categories) {
         this.categories = categories;
     }
 
@@ -180,11 +180,11 @@ public class Product {
         this.menus = menus;
     }
 
-    public Set<OrderProduct> getOrders() {
+    public Set<OrderProductEntity> getOrders() {
         return orders;
     }
 
-    public void setOrders(Set<OrderProduct> orders) {
+    public void setOrders(Set<OrderProductEntity> orders) {
         this.orders = orders;
     }
 }

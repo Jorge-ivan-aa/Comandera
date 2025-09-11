@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "daymenus")
-public class DayMenu {
+public class DayMenuEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,11 +24,11 @@ public class DayMenu {
     @OneToMany(mappedBy = "dayMenu", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Set<DayMenuProduct> products;
     
-    public DayMenu() {
+    public DayMenuEntity() {
         this.products = new HashSet<>();
     }
 
-    public DayMenu(LocalDateTime creation) {
+    public DayMenuEntity(LocalDateTime creation) {
         this();
         this.creation = creation;
     }

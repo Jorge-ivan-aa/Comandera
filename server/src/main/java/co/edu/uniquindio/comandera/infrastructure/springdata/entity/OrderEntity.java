@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -20,7 +20,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "orders")
-public class Order {
+public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,23 +32,23 @@ public class Order {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "worker_id")
     @OnDelete(action = OnDeleteAction.SET_NULL)
-    private Worker worker;
+    private WorkerEntity worker;
     
     @ManyToOne
     @JoinColumn(name = "table_id")
     @OnDelete(action = OnDeleteAction.SET_NULL)
-    private co.edu.uniquindio.comandera.infrastructure.entity.Table table;
+    private co.edu.uniquindio.comandera.infrastructure.springdata.entity.TableEntity table;
     
     @OneToMany(mappedBy = "order", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private Set<OrderProduct> products;
+    private Set<OrderProductEntity> products;
     
-    public Order() {
+    public OrderEntity() {
         this.products = new HashSet<>();
     }
 
-    public Order(
-        Worker worker,
-        co.edu.uniquindio.comandera.infrastructure.entity.Table table,
+    public OrderEntity(
+        WorkerEntity worker,
+        co.edu.uniquindio.comandera.infrastructure.springdata.entity.TableEntity table,
         Float total,
         LocalDateTime creation
     ) {
@@ -75,19 +75,19 @@ public class Order {
         this.total = total;
     }
 
-    public Worker getWorker() {
+    public WorkerEntity getWorker() {
         return worker;
     }
 
-    public void setWorker(Worker worker) {
+    public void setWorker(WorkerEntity worker) {
         this.worker = worker;
     }
 
-    public co.edu.uniquindio.comandera.infrastructure.entity.Table getTable() {
+    public co.edu.uniquindio.comandera.infrastructure.springdata.entity.TableEntity getTable() {
         return table;
     }
 
-    public void setTable(co.edu.uniquindio.comandera.infrastructure.entity.Table table) {
+    public void setTable(co.edu.uniquindio.comandera.infrastructure.springdata.entity.TableEntity table) {
         this.table = table;
     }
 
@@ -99,11 +99,11 @@ public class Order {
         this.creation = creation;
     }
 
-    public Set<OrderProduct> getProducts() {
+    public Set<OrderProductEntity> getProducts() {
         return products;
     }
 
-    public void setProducts(Set<OrderProduct> products) {
+    public void setProducts(Set<OrderProductEntity> products) {
         this.products = products;
     }
 }

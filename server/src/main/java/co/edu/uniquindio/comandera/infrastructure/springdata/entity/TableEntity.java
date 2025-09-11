@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +13,7 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 @jakarta.persistence.Table(name = "`tables`")
-public class Table {
+public class TableEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,13 +24,13 @@ public class Table {
     
     @OneToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "table_id")
-    private Set<Order> orders;
+    private Set<OrderEntity> orders;
     
-    public Table() {
+    public TableEntity() {
         this.orders = new HashSet<>();
     }
 
-    public Table(String name, Boolean enable) {
+    public TableEntity(String name, Boolean enable) {
         this();
         this.name = name;
         this.enable = enable;
@@ -60,11 +60,11 @@ public class Table {
         this.enable = enable;
     }
 
-    public Set<Order> getOrders() {
+    public Set<OrderEntity> getOrders() {
         return orders;
     }
 
-    public void setOrders(Set<Order> orders) {
+    public void setOrders(Set<OrderEntity> orders) {
         this.orders = orders;
     }
 }

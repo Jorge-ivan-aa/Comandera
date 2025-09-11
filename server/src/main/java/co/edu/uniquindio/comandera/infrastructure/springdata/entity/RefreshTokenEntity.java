@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity;
 
 import java.util.Objects;
 
@@ -19,7 +19,7 @@ import jakarta.persistence.UniqueConstraint;
     name = "refresh_tokens",
     uniqueConstraints = @UniqueConstraint(columnNames = { "user_id", "token" })
 )
-public class RefreshToken {
+public class RefreshTokenEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,14 +27,14 @@ public class RefreshToken {
     @ManyToOne
     @JoinColumn(name = "user_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private User user;
+    private UserEntity user;
 
     private String token;
     
-    public RefreshToken() {
+    public RefreshTokenEntity() {
     }
 
-    public RefreshToken(User user, String token) {
+    public RefreshTokenEntity(UserEntity user, String token) {
         this.user = Objects.requireNonNull(user);
         this.token = Objects.requireNonNull(token);
     }
@@ -47,11 +47,11 @@ public class RefreshToken {
         this.id = id;
     }
 
-    public User getUser() {
+    public UserEntity getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserEntity user) {
         this.user = user;
     }
 

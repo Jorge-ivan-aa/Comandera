@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,18 +16,18 @@ import jakarta.persistence.UniqueConstraint;
     name = "order_products",
     uniqueConstraints = @UniqueConstraint(columnNames = { "order_id", "product_id" })
 )
-public class OrderProduct {
+public class OrderProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
-    private Order order;
+    private OrderEntity order;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product product;
+    private ProductEntity product;
 
     private String name;
     
@@ -38,12 +38,12 @@ public class OrderProduct {
     @Column(nullable = true)
     private String image;
     
-    public OrderProduct() {
+    public OrderProductEntity() {
     }
 
-    public OrderProduct(
-        Order order,
-        Product product,
+    public OrderProductEntity(
+        OrderEntity order,
+        ProductEntity product,
         String name,
         Float price,
         Integer quantity,
@@ -65,19 +65,19 @@ public class OrderProduct {
         this.id = id;
     }
 
-    public Order getOrder() {
+    public OrderEntity getOrder() {
         return order;
     }
 
-    public void setOrder(Order order) {
+    public void setOrder(OrderEntity order) {
         this.order = order;
     }
 
-    public Product getProduct() {
+    public ProductEntity getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
+    public void setProduct(ProductEntity product) {
         this.product = product;
     }
 

@@ -1,4 +1,4 @@
-package co.edu.uniquindio.comandera.infrastructure.entity;
+package co.edu.uniquindio.comandera.infrastructure.springdata.entity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +19,7 @@ import jakarta.persistence.UniqueConstraint;
     name = "areas",
     uniqueConstraints = @UniqueConstraint(columnNames = { "name", "type" })
 )
-public class Area {
+public class AreaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,17 +30,17 @@ public class Area {
     
     @OneToMany
     @JoinColumn(name = "preparation_area")
-    private Set<Product> products;
+    private Set<ProductEntity> products;
     
     @ManyToMany(mappedBy = "areas")
-    private Set<Worker> workers;
+    private Set<WorkerEntity> workers;
     
-    public Area() {
+    public AreaEntity() {
         this.products = new HashSet<>();
         this.workers = new HashSet<>();
     }
 
-    public Area(String name, AreaType type) {
+    public AreaEntity(String name, AreaType type) {
         this();
         this.name = name;
         this.type = type;
@@ -70,19 +70,19 @@ public class Area {
         this.type = type;
     }
 
-    public Set<Product> getProducts() {
+    public Set<ProductEntity> getProducts() {
         return products;
     }
 
-    public void setProducts(Set<Product> products) {
+    public void setProducts(Set<ProductEntity> products) {
         this.products = products;
     }
 
-    public Set<Worker> getWorkers() {
+    public Set<WorkerEntity> getWorkers() {
         return workers;
     }
 
-    public void setWorkers(Set<Worker> workers) {
+    public void setWorkers(Set<WorkerEntity> workers) {
         this.workers = workers;
     }
 }
