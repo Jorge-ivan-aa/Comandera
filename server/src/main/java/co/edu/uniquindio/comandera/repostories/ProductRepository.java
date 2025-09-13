@@ -3,9 +3,9 @@ package co.edu.uniquindio.comandera.repostories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import co.edu.uniquindio.comandera.Entity.Product;
+import co.edu.uniquindio.comandera.infrastructure.springdata.entity.ProductEntity;
 
 @Repository
-public interface ProductRepository extends CrudRepository<Product, Long> {
+public interface ProductRepository extends CrudRepository<ProductEntity, Long> {
     // 
 }
